@@ -8,4 +8,5 @@ export interface Post {
     content: string;
     created_at: string;
     auteur: User;
+    commentsCount: number;
 }
