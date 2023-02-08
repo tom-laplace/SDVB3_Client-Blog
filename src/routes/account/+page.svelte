@@ -2,12 +2,17 @@
 	import { goto } from '$app/navigation';
 	import type { User } from '$lib/user';
 
+    if(!localStorage.getItem('token')) {
+        goto('/login')
+    }
+
 	let user: User;
 
 	user = JSON.parse(localStorage.getItem('user'));
 
-
 	function logout() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
 		goto('/login')
 	}
 </script>
